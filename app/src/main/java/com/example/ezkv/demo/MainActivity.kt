@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View) {
         when (v.id) {
             R.id.btn_write_int -> {
-                EZKV.defaultEZKV()?.encode("kInt", -5)
+                EZKV.defaultEZKV()?.encode("kInt", 1000)
             }
             R.id.btn_read_int -> {
                 val value = EZKV.defaultEZKV()?.decodeInt("kInt", -1)

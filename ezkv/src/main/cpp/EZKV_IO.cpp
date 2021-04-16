@@ -33,7 +33,7 @@ void EZKV::loadFromFile() {
             clearDictionary(m_dic);
             // 读取文件中数据填充m_dic
             MiniPBCoder::decodeMap(*m_dic, inputBuffer);
-            // 创建写入文件辅助类，从映射内存偏移4字节开始（即实际kv对内容的起始位置），可写空间为文件大小-4字节
+            // 创建写入文件辅助类，从映射内存偏移4字节开始（头4字节是存内容大小），可写空间为文件大小-4字节
             m_output = new CodedOutputData(ptr + Fixed32Size, m_file->getFileSize() - Fixed32Size);
             // 定位到文件实际内容尾部，后续直接从尾部添加KV对
             m_output->seek(m_actualSize);

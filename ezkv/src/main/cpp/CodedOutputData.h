@@ -13,7 +13,7 @@ namespace ezkv {
 
 class CodedOutputData {
     uint8_t *const m_ptr;   // 映射内存起始地址
-    size_t m_size;          // 文件可写入空间的大小
+    size_t m_size;          // 可写入空间的大小
     size_t m_position;      // 当前位置
 
 public:
